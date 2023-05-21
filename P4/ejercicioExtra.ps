@@ -1,0 +1,74 @@
+%!PS
+% Práctica 4 - Postscript
+% Realizado por: Amador Carmona Méndez y Manuel Zafra Mota
+<< /PageSize [400 300] >> setpagedevice
+% Definir colores en tonos de gris
+/gray1 0.1 def
+/gray2 0.3 def
+/gray3 0.5 def
+/gray4 0.7 def
+/gray5 0.9 def
+
+% ----- CORAZÓN ----- %
+% Parte de arriba del corazón
+newpath
+    1 0 0 setrgbcolor
+    55 195 45 0 360 arc
+    fill
+    closepath
+stroke
+newpath
+    145 195 45 0 360 arc
+    fill
+    closepath
+stroke
+newpath
+    10 195 moveto
+    190 195 lineto
+    187 179 lineto
+    100 45 lineto
+    13 179 lineto
+    closepath
+    fill
+stroke
+
+% ----- TEXTO ----- %
+/textPosX 180 def
+/textPosY 120 def
+/textSize 10 def
+/textFont {/Helvetica-Bold findfont textSize scalefont} def
+
+% Título
+/Times-Bold findfont
+20 scalefont
+0.0 setgray
+setfont
+newpath
+    210 225 moveto
+    0.0 setgray
+    (PoemaExtra - PDIH) show
+stroke
+% Texto del Poema
+textFont setfont
+newpath
+    textPosX textPosY moveto
+    gray1 setgray 
+    (En el jardin umbroso mi cuerpo fatigado) show
+stroke
+newpath
+    textPosX 10 sub textPosY 30 sub moveto
+    gray2 setgray 
+    (Las auras matinales cubrieron de rocio) show
+stroke
+newpath
+    textPosX 20 sub textPosY 60 sub moveto
+    gray3 setgray
+    (Como en la paz de un suenio se deslice a tu lado) show
+stroke
+newpath
+    textPosX 30 sub textPosY 90 sub moveto
+    gray4 setgray 
+    (El fugitivo instante que reposar ansio.) show
+stroke
+% Mostrar la tarjeta
+showpage

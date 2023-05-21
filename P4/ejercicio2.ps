@@ -1,0 +1,42 @@
+%!PS
+% Establecer el tamaño de página para la tarjeta de visita (en puntos)
+<< /PageSize [360 216] >> setpagedevice
+% ----- FIGURAS DE LA TARJETA ------ % 
+% Generar el logo (un círculo blanco dentro de un cuadrado) en la parte derecha
+newpath
+    % 0 0 moveto
+    0.5 setlinewidth % Ancho de línea
+    250 80 30 0 360 arc
+    closepath 
+stroke
+newpath
+    290 80 30 0 360 arc
+    closepath % Círculo
+    gsave
+        0.75 setgray 
+        fill
+    grestore
+stroke
+% ----- TEXTO DE LA TARJETA ----- %
+% Titulo
+/Helvetica-Bold findfont 
+16 scalefont 
+0 setgray
+setfont % Fuente y tamaño del texto
+newpath
+    90 165 moveto
+    (Tarjeta de Visita - PDIH) show
+stroke
+% Nombres
+/Times-Bold findfont
+14 scalefont
+setfont
+newpath
+    50 95 moveto % Posición inicial del texto
+    (Amador Carmona) show % Mostrar el texto
+stroke
+newpath
+    50 65 moveto % Posición inicial del texto
+    (Manuel Zafra) show % Mostrar el texto
+stroke
+showpage
